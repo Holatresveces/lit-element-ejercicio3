@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html, css } from "lit-element";
 import "./myList";
 
 class MyApp extends LitElement {
@@ -8,6 +8,18 @@ class MyApp extends LitElement {
     };
   }
 
+  static get styles() {
+    return css`
+      .btn {
+        text-transform: uppercase;
+        border: 2px solid black;
+        background: white;
+        font-weight: bold;
+        padding: 0.5rem;
+      }
+    `;
+  }
+
   constructor() {
     super();
     this.list = [];
@@ -15,8 +27,8 @@ class MyApp extends LitElement {
 
   render() {
     return html`
-      <button @click=${this._onCreateList}>Create list</button>
-      <button @click=${this._onEmptyList}>Empty list</button>
+      <button class="btn" @click=${this._onCreateList}>Create list</button>
+      <button class="btn" @click=${this._onEmptyList}>Empty list</button>
       <my-list title="My Favorite Movies" .list=${this.list}></my-list>
     `;
   }
