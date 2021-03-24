@@ -17,6 +17,10 @@ class MyApp extends LitElement {
         font-weight: bold;
         padding: 0.5rem;
       }
+
+      .btn:active {
+        background: #ddd;
+      }
     `;
   }
 
